@@ -1,0 +1,316 @@
+/* Importa fuentes de Google Fonts (Oswald para títulos, Roboto para cuerpo) */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+/* Variables CSS para colores y tipografía */
+:root {
+    --primary-color: #2c3e50; /* Un azul oscuro/casi negro para el header */
+    --accent-color: #f0f0f0; /* Color de fondo general */
+    --sidebar-bg-color: #f8f8f8; /* Color de fondo de la barra lateral */
+    --sidebar-text-color: #333;
+    --red-highlight: #ff69b4; /* El rosa fuerte del logo y quizás algunos detalles */
+    --text-dark: #333;
+    --text-light: #fff;
+    --border-color: #eee;
+
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+/* Estilos globales */
+body {
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Header */
+.header {
+    background-color: var(--text-light); /* Fondo blanco para el header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 28px; /* Tamaño del logo ajustado */
+    font-weight: 700;
+    color: #000; /* Color del logo */
+}
+
+.header-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+    color: #555;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 25px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.main-nav a {
+    color: #555;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--red-highlight);
+    border-bottom: 2px solid var(--red-highlight);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.login-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #555;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.login-btn i {
+    font-size: 20px;
+    color: #555;
+}
+
+.date-display {
+    background-color: var(--primary-color); /* Color oscuro del header */
+    color: var(--text-light);
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* Contenido Principal */
+.main-content {
+    display: grid;
+    grid-template-columns: 250px 1fr; /* Ancho de la barra lateral y el contenido */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: var(--text-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Barra lateral izquierda */
+.sidebar-left {
+    background-color: var(--sidebar-bg-color); /* Un gris claro para el fondo */
+    padding: 20px;
+    border-radius: 5px;
+    border-left: 5px solid var(--red-highlight); /* Línea roja a la izquierda */
+}
+
+.sidebar-title {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--red-highlight); /* Color rojo para el título */
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.sidebar-news-list li {
+    margin-bottom: 12px;
+}
+
+.sidebar-news-list a {
+    font-size: 15px;
+    color: var(--sidebar-text-color);
+    line-height: 1.4;
+    display: block;
+}
+
+.sidebar-news-list a:hover {
+    color: var(--red-highlight);
+    text-decoration: underline;
+}
+
+/* Sección de Noticias (Grid) */
+.news-grid {
+    padding: 0 20px; /* Padding interno para separar del borde */
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: left;
+    color: var(--text-dark);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 25px; /* Espacio entre las tarjetas */
+}
+
+.news-card {
+    background-color: var(--text-light);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+}
+
+.news-card img {
+    width: 100%;
+    height: 180px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    display: block;
+}
+
+.news-card h3 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 700;
+    padding: 15px;
+    margin: 0;
+    color: var(--text-dark);
+    line-height: 1.3;
+}
+
+.news-card p {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: #666;
+    padding: 0 15px 15px;
+    margin: 0;
+}
+
+.news-card .news-category {
+    background-color: #f0f0f0;
+    color: #888;
+    font-size: 12px;
+    padding: 5px 8px;
+    border-radius: 3px;
+    margin: 10px 15px;
+    display: inline-block;
+}
+
+.news-card .news-time {
+    font-size: 12px;
+    color: #999;
+    padding: 0 15px 10px;
+    display: block;
+}
+
+/* Tamaños específicos de tarjeta para el diseño */
+.news-card.big-card {
+    grid-column: span 1; /* Ocupa 1 columna por defecto */
+}
+
+/* Ajustes para que la tarjeta de la esquina inferior derecha se alinee con las demás si es necesario */
+/* Esto puede requerir ajustes manuales del grid-template-columns o de los span según la cantidad de noticias */
+/* La imagen tiene 3 columnas, con una tarjeta grande, 2 medianas y 3 pequeñas. */
+/* Aseguramos que la primera tarjeta grande ocupe un slot completo */
+.grid-container .big-card:nth-child(1) {
+    grid-column: span 1;
+}
+
+/* Ajustes para el tamaño de las imágenes de placeholder si son diferentes en la imagen original */
+.grid-container .news-card img {
+    height: 180px; /* Altura estándar para la mayoría de las imágenes */
+}
+
+/* Ajustes finos para que se parezca lo más posible a la imagen */
+.grid-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+}
+.news-card.medium-card img {
+    height: 150px; /* Altura para las tarjetas medianas */
+}
+.news-card.small-card img {
+    height: 100px; /* Altura para las tarjetas pequeñas */
+}
+
+/* Media Queries para Responsive Design (Adaptación a pantallas más pequeñas) */
+@media (max-width: 1024px) {
+    .main-content {
+        grid-template-columns: 1fr; /* La barra lateral se pone arriba o abajo */
+        padding: 15px;
+    }
+    .sidebar-left {
+        order: 2; /* Mueve la barra lateral debajo del contenido principal en móvil */
+        margin-top: 20px;
+        border-left: none;
+        border-top: 5px solid var(--red-highlight);
+    }
+    .news-grid {
+        order: 1;
+        padding: 0;
+    }
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+        gap: 20px;
+    }
+    .news-card.big-card, .news-card.medium-card, .news-card.small-card {
+        grid-column: span 1; /* Todas ocupan 1 columna */
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap; /* Permite que los elementos del header se envuelvan */
+        justify-content: center;
+        text-align: center;
+    }
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .header-right {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: center;
+    }
+    .grid-container {
+        grid-template-columns: 1fr; /* 1 columna en móvil */
+        gap: 15px;
+    }
+    .news-card img {
+        height: 200px; /* Ajusta la altura de la imagen en móvil */
+    }
+}
